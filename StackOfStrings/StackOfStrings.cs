@@ -1,35 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace StackOfStrings
 {
     public class StackOfStrings
     {
-        private List<string> data;
+        private List<string> data = new List<string>();
 
         public void Push(string item)
         {
-
+            data.Add(item);
         }
-        public string Pop()
+        public bool Pop()
         {
-
+            data.RemoveAt(data.Count - 1);
+            return true;
         }
         public string Peek()
         {
-
+            return data[data.Count - 1];
         }
         public bool IsEmpty()
         {
-
+            return data.Count == 0;
         }
-
-        public delegate void Del(string message);
-        public static void DelegateStoreData(string message)
-        {
-            Console.WriteLine(message);
-        }
-
     }
 }
